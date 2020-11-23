@@ -27,6 +27,13 @@ func (lh *logHandler) Initialize(ctx context.Context, params lsp.InitializeParam
 			HoverProvider:              true,
 			DocumentFormattingProvider: true,
 			DocumentSymbolProvider:     true,
+			SemanticTokensProvider: lsp.SemanticTokensOptions{
+				Legend: lsp.SemanticTokensLegend{
+					TokenTypes:     []string{},
+					TokenModifiers: []string{},
+				},
+				Full: true,
+			},
 		},
 	}
 
